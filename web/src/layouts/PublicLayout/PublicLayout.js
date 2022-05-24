@@ -101,6 +101,18 @@ const PublicLayout = ({ children }) => {
         </nav>
       </header>
       <div className="container">{children}</div>
+      <footer>
+        <p>
+          Designed by{' '}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/casey-mockbee/"
+          >
+            Casey Mockbee
+          </a>
+        </p>
+      </footer>
     </>
   )
 }

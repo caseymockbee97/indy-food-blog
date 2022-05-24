@@ -43,13 +43,13 @@ const PostsPage = () => {
           onKeyDown={(e) => {
             if (e.code === 'Enter') console.log(each.title)
           }}
-          className="individual-post"
+          className="post-card"
           style={{ backgroundImage: each.imageURL }}
           key={each.id}
         >
           <div className="overlay">
             <h2>{each.title}</h2>
-            <div className="expandable"> </div>
+            <div className="expandable"></div>
           </div>
         </div>
       ))}

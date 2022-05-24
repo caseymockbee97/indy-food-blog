@@ -7,8 +7,8 @@ const AboutPage = () => {
     <>
       <MetaTags title="About" description="About page" />
 
-      <div className="about-container">
-        <div className="about-text-container">
+      <div className="about-article-container">
+        <div className="about-article-text-container">
           <h2>About</h2>
 
           <img src={squirrelIMG} alt="Squirrel at door" />

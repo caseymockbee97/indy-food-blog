@@ -23,7 +23,6 @@
   },
   "packageManager": "yarn@3.2.0",
   "dependencies": {
-    "moment": "^2.29.3",
     "react-tsparticles": "^2.0.6",
     "tsparticles-slim": "^2.0.6"
   }
