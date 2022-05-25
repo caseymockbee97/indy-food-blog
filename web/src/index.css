@@ -10,11 +10,14 @@
   font-family: 'Playfair Display', serif;
   box-sizing: border-box;
 }
-
+/* Necessary for iphone 'safe' area */
+html {
+  background-color: #C9B7C8;
+}
 html,body,#redwood-app {
   min-height: 100vh;
   min-width: 100vw;
-
+  margin: 0;
 }
 
 #redwood-app {
@@ -68,6 +71,7 @@ nav a:hover, nav span:hover {
 footer {
   flex-shrink: 0;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 footer p {
