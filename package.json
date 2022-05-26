@@ -23,6 +23,8 @@
   },
   "packageManager": "yarn@3.2.0",
   "dependencies": {
+    "dompurify": "^2.3.8",
+    "marked": "^4.0.16",
     "react-tsparticles": "^2.0.6",
     "tsparticles-slim": "^2.0.6"
   }

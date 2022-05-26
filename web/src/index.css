@@ -207,12 +207,30 @@ div.post-card div.overlay div.expandable {
 .about-article-text-container {
   padding: 15px;
 }
+.about-article-text-container a {
+  text-decoration: none;
+  color: var(--off-black);
+  font-size: .7rem;
+  text-align: center;
+  display: block;
 
-.about-article-text-container h2 {
+}
+.about-article-text-container a:hover {
+  text-decoration: underline;
+}
+
+.about-article-text-container h3 {
+  text-indent: 1ch;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.about-article-text-container h2, .about-article-text-container h1 {
   text-align: center;
   font-size: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: .7rem;
+  margin-bottom: .7rem;
 }
 
 .about-article-text-container p {
