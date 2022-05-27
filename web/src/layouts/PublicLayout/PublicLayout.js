@@ -94,7 +94,7 @@ const PublicLayout = ({ children }) => {
 
       <header className="header">
         <h1 className="title"> Indy Food </h1>
-        <nav>
+        <nav className="public-layout">
           <Link to={routes.about()}>About</Link>
           <Link to={routes.posts()}>Posts</Link>
           <Link to={routes.suggestion()}>Suggestion</Link>
@@ -103,7 +103,7 @@ const PublicLayout = ({ children }) => {
       <div className="container">{children}</div>
       <footer>
         <p>
-          Designed by{' '}
+          Designed & Created by{' '}
           <a
             target="_blank"
             rel="noreferrer"
