@@ -1,5 +1,5 @@
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -11,8 +11,58 @@ generator client {
 // Define your own datamodels here and run `yarn redwood prisma migrate dev`
 // to create migrations for them and apply to your dev DB.
 // TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+
+enum Price {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum Reservation {
+  NO
+  MAYBE
+  DEFINITELY
+}
+
+enum Meal {
+  BREAKFAST
+  BRUNCH
+  LUNCH
+  TEA
+  DINNER
+  DESSERT
+  DRINKS
+}
+
+model User {
+  id String @id @default(uuid())
+  username String @unique
+  firstName String?
+  lastName String?
+  isAdmin Boolean @default(false)
+  hashedPassword String
+  salt String
+  resetToken String?
+  resetTokenExpiresAt String?
+}
+
+model Article {
+  id String @id @default(uuid())
+  restaurantName String
+  mainImageURL String
+  articleBody String
+  priceLevel Price
+  dogFriendly Boolean
+  outdoorSeating Boolean
+  barSeating Boolean
+  reservationNeeded Reservation
+  mealType Meal
+  createdAt DateTime @default(now())
+}
+
+model Suggestion {
+  id String @id @default(uuid())
+  suggestion String @db.VarChar(300)
+  makePublic Boolean @default(false)
+  createdAt DateTime @default(now())
 }

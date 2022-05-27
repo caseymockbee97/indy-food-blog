@@ -3,6 +3,7 @@
 :root {
   --off-black: #080808;
   --off-white: #f8f8f8;
+  --background-color: #C9B7C8;
   --expand-size: 0rem;
 }
 
@@ -12,7 +13,7 @@
 }
 /* Necessary for iphone 'safe' area */
 html {
-  background-color: #C9B7C8;
+  background-color: var(--background-color);
 }
 html,body,#redwood-app {
   min-height: 100vh;
@@ -40,7 +41,7 @@ h1.title {
 }
 
 
-nav {
+nav.public-layout {
   max-width: calc(550px * .95);
   padding-left: 10px;
   padding-right: 10px;
@@ -49,15 +50,16 @@ nav {
   justify-content: space-between;
 
 }
-nav a {
+nav.public-layout a, nav.public-layout span {
   text-decoration: none;
   color: #f8f8f8;
   font-size: 1.5rem;
   text-shadow: 0 1px 1px rgb(0, 0, 0);
   transition: text-shadow 100ms ease-in 0s;
+  cursor: pointer;
 
 }
-nav a:hover, nav span:hover {
+nav.public-layout a:hover, nav.public-layout span:hover {
   text-shadow: 0 2px 2px rgb(0, 0, 0);
 }
 
@@ -136,8 +138,9 @@ footer a:hover {
   background-color: #ffffff;
   padding: 5px;
   border-radius: 5px;
+  border: none;
   font-size: .8rem;
-  cursor: pointer;
+  color: var(--off-black);
   box-shadow: 0 2px 2px rgba(0,0,0,.5);
   transition: all 100ms ease-in 0s;
 }
@@ -207,12 +210,34 @@ div.post-card div.overlay div.expandable {
 .about-article-text-container {
   padding: 15px;
 }
+.about-article-text-container a {
+  text-decoration: none;
+  color: #937291;
 
-.about-article-text-container h2 {
+
+}
+.about-article-text-container a:hover {
+  text-decoration: underline;
+}
+
+.about-article-text-container a.part-of-page {
+  font-size: .7rem;
+  text-align: center;
+  display: block;
+}
+
+.about-article-text-container h3 {
+  text-indent: 1ch;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.about-article-text-container h2, .about-article-text-container h1 {
   text-align: center;
   font-size: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: .7rem;
+  margin-bottom: .7rem;
 }
 
 .about-article-text-container p {

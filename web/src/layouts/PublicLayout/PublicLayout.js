@@ -1,3 +1,4 @@
+import { useAuth } from '@redwoodjs/auth'
 import { Link, routes } from '@redwoodjs/router'
 import { useCallback, useMemo } from 'react'
 import Particles from 'react-tsparticles'
@@ -8,6 +9,8 @@ import TacoSVG from 'src/layouts/PublicLayout/assets/Taco.svg?url'
 import WineSVG from 'src/layouts/PublicLayout/assets/Wine.svg?url'
 
 const PublicLayout = ({ children }) => {
+  const { isAuthenticated, logOut } = useAuth()
+
   const particlesInit = useCallback((main) => {
     loadSlim(main)
   }, [])
@@ -88,22 +91,37 @@ const PublicLayout = ({ children }) => {
     }
   }, [])
 
+  const handleLogout = (e) => {
+    if (e.code === 'Enter') logOut()
+  }
+
   return (
     <>
       <Particles options={options} init={particlesInit} />
 
       <header className="header">
         <h1 className="title"> Indy Food </h1>
-        <nav>
+
+        <nav className="public-layout">
           <Link to={routes.about()}>About</Link>
           <Link to={routes.posts()}>Posts</Link>
           <Link to={routes.suggestion()}>Suggestion</Link>
+          {isAuthenticated && (
+            <span
+              onKeyDown={(e) => handleLogout(e)}
+              tabIndex={0}
+              role="button"
+              onClick={() => logOut()}
+            >
+              Logout
+            </span>
+          )}
         </nav>
       </header>
       <div className="container">{children}</div>
       <footer>
         <p>
-          Designed by{' '}
+          Designed & Created by{' '}
           <a
             target="_blank"
             rel="noreferrer"
