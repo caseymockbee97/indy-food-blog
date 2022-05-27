@@ -50,12 +50,13 @@ nav.public-layout {
   justify-content: space-between;
 
 }
-nav.public-layout a {
+nav.public-layout a, nav.public-layout span {
   text-decoration: none;
   color: #f8f8f8;
   font-size: 1.5rem;
   text-shadow: 0 1px 1px rgb(0, 0, 0);
   transition: text-shadow 100ms ease-in 0s;
+  cursor: pointer;
 
 }
 nav.public-layout a:hover, nav.public-layout span:hover {

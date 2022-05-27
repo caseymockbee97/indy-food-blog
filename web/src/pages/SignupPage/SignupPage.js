@@ -7,6 +7,7 @@ import {
   PasswordField,
   FieldError,
   Submit,
+  CheckboxField,
 } from '@redwoodjs/forms'
 import { useAuth } from '@redwoodjs/auth'
 import { MetaTags } from '@redwoodjs/web'
@@ -118,6 +119,20 @@ const SignupPage = () => {
                   />
 
                   <FieldError name="lastName" className="rw-field-error" />
+                  <Label
+                    name="isAdmin"
+                    className="rw-label"
+                    errorClassName="rw-label rw-label-error"
+                  >
+                    Is Admin
+                  </Label>
+                  <CheckboxField
+                    name="isAdmin"
+                    className="rw-input"
+                    errorClassName="rw-input rw-input-error"
+                  />
+
+                  <FieldError name="isAdmin" className="rw-field-error" />
 
                   <Label
                     name="password"

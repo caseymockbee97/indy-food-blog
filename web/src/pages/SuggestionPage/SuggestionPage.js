@@ -52,7 +52,7 @@ const SuggestionPage = () => {
               </div>
             ) : (
               <>
-                <Label for="suggestion">
+                <Label htmlFor="suggestion">
                   <h2>Where should we visit next?</h2>
                 </Label>
                 <TextAreaField
