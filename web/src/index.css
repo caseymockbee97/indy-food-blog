@@ -113,6 +113,115 @@ div.public-layout footer a:hover {
   text-shadow: 0 2px 2px black;
 }
 
+.loading-card {
+  width: 95%;
+  height: 250px;
+  background-color: #f8f8f8;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  margin-top: 30px;
+  overflow: hidden;
+  color: #080808;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loading-card-image-container {
+  height: 100px;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: -25px;
+}
+
+.loading-card-image-container-image {
+  width: 100px;
+  -webkit-filter: drop-shadow(0 2px 0 #0808089c);
+          filter: drop-shadow(0 2px 0 #0808089c);
+  -webkit-animation-name: bouncing;
+          animation-name: bouncing;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.loading-card-text {
+  padding-top: 0;
+  margin-top: 0;
+  -webkit-animation-name: opacity-wave;
+          animation-name: opacity-wave;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bouncing {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+}
+
+@keyframes bouncing {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+}
+
+@-webkit-keyframes opacity-wave {
+  0% {
+    opacity: 70%;
+  }
+  10% {
+    opacity: 100%;
+  }
+}
+
+@keyframes opacity-wave {
+  0% {
+    opacity: 70%;
+  }
+  10% {
+    opacity: 100%;
+  }
+}
+
 /* Suggestion Page */
 .suggestion-container {
   width: 95%;
