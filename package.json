@@ -8,7 +8,8 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "1.4.3"
+    "@redwoodjs/core": "1.4.3",
+    "sass-loader": "^13.0.0"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
@@ -26,6 +27,7 @@
     "dompurify": "^2.3.8",
     "marked": "^4.0.16",
     "react-tsparticles": "^2.0.6",
+    "sass": "^1.52.2",
     "tsparticles-slim": "^2.0.6"
   }
 }

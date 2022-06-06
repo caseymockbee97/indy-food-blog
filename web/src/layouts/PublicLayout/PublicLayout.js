@@ -96,7 +96,7 @@ const PublicLayout = ({ children }) => {
   }
 
   return (
-    <>
+    <div className="public-layout">
       <Particles options={options} init={particlesInit} />
 
       <header className="header">
@@ -131,7 +131,7 @@ const PublicLayout = ({ children }) => {
           </a>
         </p>
       </footer>
-    </>
+    </div>
   )
 }
 

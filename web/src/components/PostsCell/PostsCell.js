@@ -1,4 +1,5 @@
 import { Link, routes } from '@redwoodjs/router'
+import LoadingCard from 'src/components/LoadingCard/LoadingCard'
 
 export const QUERY = gql`
   query PostsQuery {
@@ -10,7 +11,7 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <LoadingCard />
 
 export const Empty = () => <div>Empty</div>
 

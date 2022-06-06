@@ -1,4 +1,6 @@
 import Post from 'src/components/Post/Post'
+import LoadingCard from 'src/components/LoadingCard/LoadingCard'
+
 export const QUERY = gql`
   query FindPostQuery($id: String!) {
     post: article(id: $id) {
@@ -17,7 +19,7 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <LoadingCard />
 
 export const Empty = () => <div>Empty</div>
 
