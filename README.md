@@ -1,9 +1,5 @@
-# README
+[Deployed Site](https://vocal-liger-00206f.netlify.app)
 
-## TODO
+# Indy Food
 
-[] Add Animation to component load
-[] Add Text preview to edit post page
-[] Add BEM conventions to .SCSS
-[] Style lists for the article
-[] Add functionality to the radio buttons in the form for articles.
+Indy food is a blog created using Redwood JS.
