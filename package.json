@@ -28,6 +28,7 @@
     "marked": "^4.0.16",
     "react-tsparticles": "^2.0.6",
     "sass": "^1.52.2",
+    "tsparticles-engine": "^2.0.6",
     "tsparticles-slim": "^2.0.6"
   }
 }

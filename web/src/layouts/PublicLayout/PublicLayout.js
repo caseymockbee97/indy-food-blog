@@ -1,6 +1,6 @@
 import { useAuth } from '@redwoodjs/auth'
 import { Link, routes } from '@redwoodjs/router'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useState, useMemo, useRef } from 'react'
 import Particles from 'react-tsparticles'
 import { loadSlim } from 'tsparticles-slim'
 import BurgerSVG from 'src/layouts/PublicLayout/assets/Burger.svg?url'
@@ -14,6 +14,12 @@ const PublicLayout = ({ children }) => {
   const particlesInit = useCallback((main) => {
     loadSlim(main)
   }, [])
+
+  const [isPaused, setIsPaused] = useState(false)
+
+  const handleClick = () => {
+    setIsPaused((prev) => !prev)
+  }
 
   const options = useMemo(() => {
     return {
@@ -32,7 +38,7 @@ const PublicLayout = ({ children }) => {
         },
         move: {
           direction: 'bottom',
-          enable: true,
+          enable: !isPaused,
           outMode: 'out',
           random: true,
           speed: { min: 1, max: 2 },
@@ -51,13 +57,13 @@ const PublicLayout = ({ children }) => {
         },
         rotate: {
           animation: {
-            enable: true,
+            enable: !isPaused,
             speed: 3,
             sync: false,
           },
           direction: 'random',
           random: true,
-          value: 1,
+          value: { min: 0, max: 360 },
         },
         shape: {
           type: 'image',
@@ -87,17 +93,33 @@ const PublicLayout = ({ children }) => {
           },
         },
       },
+      interactivity: {
+        events: {
+          onClick: {
+            enable: false,
+            mode: 'pause',
+          },
+        },
+      },
       detectRetina: true,
     }
-  }, [])
+  }, [isPaused])
 
   const handleLogout = (e) => {
     if (e.code === 'Enter') logOut()
   }
 
+  const handlePlayPause = (e) => {
+    if (e.code === 'Enter') setIsPaused((prev) => !prev)
+  }
+
   return (
     <div className="public-layout">
-      <Particles options={options} init={particlesInit} />
+      <Particles
+        options={options}
+        init={particlesInit}
+        canvasClassName="particles-canvas"
+      />
 
       <header className="header">
         <h1 className="title"> Indy Food </h1>
@@ -130,6 +152,16 @@ const PublicLayout = ({ children }) => {
             Casey Mockbee
           </a>
         </p>
+        <div className="background-controls">
+          <div
+            tabIndex={0}
+            onClick={handleClick}
+            onKeyDown={handlePlayPause}
+            role="button"
+          >
+            {isPaused ? 'Play ' : 'Pause '}background
+          </div>
+        </div>
       </footer>
     </div>
   )

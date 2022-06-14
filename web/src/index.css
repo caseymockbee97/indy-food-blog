@@ -101,6 +101,28 @@ div.public-layout footer p {
   margin-bottom: .3rem;
 }
 
+div.public-layout footer .background-controls {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.public-layout footer .background-controls div {
+  cursor: pointer;
+  color: #f8f8f8;
+  text-shadow: 0 1px 1px black;
+  -webkit-transition: text-shadow 100ms ease-in 0s;
+  transition: text-shadow 100ms ease-in 0s;
+}
+
+div.public-layout footer .background-controls div:hover {
+  text-shadow: 0 2px 2px black;
+}
+
 div.public-layout footer a {
   text-decoration: none;
   color: #f8f8f8;

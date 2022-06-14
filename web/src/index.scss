@@ -87,14 +87,28 @@ div.public-layout {
       margin-bottom: .3rem;
 
     }
+    .background-controls {
+      width: 100vw;
+      display:flex;
+      justify-content: center;
+      div {
+        cursor: pointer;
+        color: $off-white;
+        text-shadow: 0 1px 1px rgb(0, 0, 0);
+        transition: text-shadow 100ms ease-in 0s;
+        &:hover {
+          text-shadow: 0 2px 2px rgb(0, 0, 0);
+        }
+      }
+    }
     a {
       text-decoration: none;
       color: $off-white;
       text-shadow: 0 1px 1px rgb(0, 0, 0);
       transition: text-shadow 100ms ease-in 0s;
-    }
-    a:hover {
-      text-shadow: 0 2px 2px rgb(0, 0, 0);
+      &:hover {
+        text-shadow: 0 2px 2px rgb(0, 0, 0);
+      }
     }
   }
 
